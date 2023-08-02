@@ -23,13 +23,13 @@ const Navbar = ({ cartItems, productInfo }) => {
   return (
     <Flex bgColor="#F6F6F7" justifyContent="flex-end" h="2em">
       <Container maxW="container.lg" display="flex" justifyContent="flex-end">
-        <Menu isLazy>
+        <Menu>
           <MenuButton fontSize="xs">My Cart</MenuButton>
           <MenuList>
             {!cartItems.length ?
               <Text textAlign="center">Your cart is empty.</Text>
-              : cartItems?.map((item) => {
-                <MenuItem>
+              : cartItems.map((item, i) => {
+                <MenuItem key={i}>
                   <Flex>
                     <Box px="5em">
                       <NextImage

@@ -5,8 +5,8 @@ import { Box, Button, Container, Flex, Text } from "@chakra-ui/react"
 const ProductInfo = ({ handleSelect, sizeSelected, handleAddToCart, productInfo }) => {
   const { title, price, description, sizeOptions } = productInfo
   return (
-    <Box display="flex" flexDir="row" justifyContent="center" py="3em">
-      <Box px="5em">
+    <Box display="flex" flexDir={{ base: 'column', sm: 'row'}} justifyContent="center" py={{ base: '1em', md: '3em'}} px={{ base: '1em', md: '0em'}}>
+      <Box px={{ base: '0em', lg: '5em'}} pb={{ base: '1em', md: '0em'}}>
         <NextImage
           src="/classic-tee.jpg"
           width={400}
@@ -31,6 +31,7 @@ const ProductInfo = ({ handleSelect, sizeSelected, handleAddToCart, productInfo 
                 onClick={handleSelect}
                 value={option.label}
                 id={option.id}
+                key={option.id}
                 size="md"
                 bg="white"
                 border=" solid #888888 1px"

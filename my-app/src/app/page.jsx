@@ -48,7 +48,7 @@ const Home = () => {
   };
 
   return (
-    <Box display="flex" flexDir="column" mx="10em">
+    <Box display="flex" flexDir="column" mx={{ base: '0', md: '4em', lg: '10em'}}>
       <Flex justifyContent="center" flexDir="column" pt="1em">
         <NavBar cartItems={cartItems} productInfo={productInfo} />
         <ProductInfo productInfo={productInfo} handleSelect={handleSelect} sizeSelected={sizeSelected} handleAddToCart={handleAddToCart} />
